@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">CarRental<span class="accent">Portal</span></h1>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h2>Find Your Dream Car</h2>
+            <p>Premium cars for premium experiences. Rent the best today.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="car-grid">
+            <% cars.forEach(function(car) { %>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="<%= car.image %>" alt="<%= car.name %>">
+                        <span class="category-tag"><%= car.category %></span>
+                    </div>
+                    <div class="car-details">
+                        <h3><%= car.name %></h3>
+                        <p class="price">$<%= car.price %> <span class="per-day">/ day</span></p>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+            <% }); %>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Car Rental Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
