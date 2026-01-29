@@ -5,5 +5,5 @@ services:
     container_name: car-rental-app
     build: .
     ports:
-      - "6000:6000"
+      - "7000:6000"
     restart: always
